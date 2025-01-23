@@ -1,0 +1,6 @@
+{
+    "statusMapping":{
+        "IP": "InProgress",
+        "CO": "Completed"
+      }
+}
