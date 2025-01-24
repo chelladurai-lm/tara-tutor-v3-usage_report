@@ -4,17 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prod": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "nodemon app.js",
+    "dev": "dotenv -e .env.dev nodemon app.js",
+    "test": "dotenv -e .env.test nodemon app.js",
+    "prod": "dotenv -e .env.prod nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chelladurai S",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
     "express": "^4.21.2",
     "mongoose": "^8.9.3",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7"
   }
 }

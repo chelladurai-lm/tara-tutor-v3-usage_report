@@ -7,6 +7,9 @@ const _DB =
   process.env.SERVER === "prod"
     ? process.env.PROD_DATABASE.replace("<PASSWORD>",process.env.PROD_DATABASE_PASSWORD)
         .replace("<USERNAME>",process.env.PROD_DATABASE_USERNAME)
+    : process.env.SERVER === "test"
+    ? process.env.TEST_DATABASE.replace("<PASSWORD>", process.env.TEST_DATABASE_PASSWORD)
+    .replace("<USERNAME>", process.env.TEST_DATABASE_USERNAME)
     : process.env.DEV_DATABASE.replace("<PASSWORD>",process.env.DEV_DATABASE_PASSWORD)
         .replace("<USERNAME>",process.env.DEV_DATABASE_USERNAME);
 

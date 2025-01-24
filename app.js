@@ -1,15 +1,23 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const __connectToDB = require("./config/databaseconfig");
+const dotenv = require('dotenv');
+const path = require('path');
+
 
 let __userCourseRouter = require("./routers/userCourseRoute");
 let __userCourseSessionRouter = require("./routers/userCourseSessionRoute");
 let __userCourseHistoryRouter = require("./routers/userCourseHistoryRoute"); 
 
 const __app = express();
+
+const _env = process.env.NODE_ENV || 'dev';
+const _envFilePath = path.resolve(__dirname, `.env.${_env}`);
+dotenv.config({ path: _envFilePath });
+
 const __PORT = process.env.PORT || 6000;
 const __BASE_URL = process.env.BASE_URL || 'http://localhost';
+
+const __connectToDB = require("./config/databaseconfig");
 
 __connectToDB()
   .then(() => {
