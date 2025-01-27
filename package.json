@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "dev": "dotenv -e .env.dev nodemon app.js",
-    "test": "dotenv -e .env.test nodemon app.js",
-    "prod": "dotenv -e .env.prod nodemon app.js"
+    "local":"SET SERVER=dev& BASE_URL=http://localhost& PORT=6001& nodemon app.js",
+    "dev":"SET SERVER=dev& BASE_URL=https://dev-account-admin.learningmatters.ai/tarav3_usagereport& PORT=6001& node app.js",
+    "test":"SET SERVER=test& BASE_URL=https://test-account-admin.learningmatters.ai/tarav3_usagereport& PORT=6001& node app.js",
+    "prod":"SET SERVER=prod& BASE_URL=https://account-admin.learningmatters.ai/tarav3_usagereport& PORT=6001& node app.js"
   },
   "keywords": [],
   "author": "Chelladurai S",

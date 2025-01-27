@@ -10,9 +10,11 @@ let __userCourseHistoryRouter = require("./routers/userCourseHistoryRoute");
 
 const __app = express();
 
-const _env = process.env.NODE_ENV || 'dev';
-const _envFilePath = path.resolve(__dirname, `.env.${_env}`);
-dotenv.config({ path: _envFilePath });
+const _env = process.env.SERVER || 'dev';
+/*const _envFilePath = path.resolve(__dirname, `.env.${_env}`);
+dotenv.config({ path: _envFilePath });*/
+
+require("dotenv").config();
 
 const __PORT = process.env.PORT || 6000;
 const __BASE_URL = process.env.BASE_URL || 'http://localhost';
